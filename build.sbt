@@ -6,6 +6,10 @@ PB.targets in Compile := Seq(
   scalapb.gen() -> (sourceManaged in Compile).value
 )
 
+PB.protoSources in Compile := Seq(file("src/main/protobuf"), file("target/protobuf_external/google/api"))
+
+PB.includePaths in Compile := Seq(file("src/main/protobuf"), file("target/protobuf_external"))
+
 libraryDependencies ++= Seq(
   // Removing this dependency gives:
   //   google/api/annotations.proto: File not found.

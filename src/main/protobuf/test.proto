@@ -1,3 +1,4 @@
 syntax = "proto3";
+package foo;
 
 import "google/api/annotations.proto";
