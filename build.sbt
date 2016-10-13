@@ -7,7 +7,8 @@ PB.targets in Compile := Seq(
 )
 
 libraryDependencies ++= Seq(
-  "io.grpc" % "grpc-netty" % "1.0.1",
-  "com.trueaccord.scalapb" %% "scalapb-runtime-grpc" % "0.5.43",
+  // Removing this dependency gives:
+  //   google/api/annotations.proto: File not found.
+  //   test.proto: Import "google/api/annotations.proto" was not found or had errors.
   "com.google.api.grpc" % "googleapis-common-protos" % "0.0.3" % "protobuf"
 )
